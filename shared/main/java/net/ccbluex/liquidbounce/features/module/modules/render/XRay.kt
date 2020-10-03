@@ -51,6 +51,10 @@ class XRay : Module() {
             classProvider.getBlockEnum(BlockType.LIT_FURNACE)
     )
 
+    override fun onDisable() {
+        mc.gameSettings.gammaSetting = 0.0F
+    }
+
     override fun onToggle(state: Boolean) {
         mc.renderGlobal.loadRenderers()
     }
